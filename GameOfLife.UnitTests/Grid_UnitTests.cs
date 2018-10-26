@@ -23,7 +23,7 @@ namespace GameOfLife.UnitTests
         [Fact]
         public void When_SetSeed_Then_SeedIsSeted()
         {
-            Grid.SetSeed(7);
+            Grid.SetRandomSeed(7);
 
             Assert.True(7 >= Grid.Cells.Where(cell => cell.IsAlive).Count());
         }

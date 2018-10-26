@@ -47,9 +47,10 @@ namespace GameOfLife
             Task.WaitAll(tasks);
         }
 
-        public void SetSeed(int numberAlivedCells)
+        public void SetRandomSeed(int height, int width)
         {
             var random = new Random();
+            var numberAlivedCells = random.Next(0, height*width);
 
             for (int i = 0; i < numberAlivedCells; i++)
             {
@@ -59,6 +60,37 @@ namespace GameOfLife
                 var cell = GetCell(randomWidth, randomHeight);
                 cell.IsAlive = true;
             }
+        }
+
+        public void SetCenterSeed(int numberCells, int height, int width)
+        {
+            var cellsToBeAlive = new List<Cell>();
+            var random = new Random();
+            var centerX = width / 2;
+            var centerY = height / 2;
+
+            var centerCell = GetCell(centerX, centerY);
+            cellsToBeAlive.Add(centerCell);
+            var radius = 1;
+
+            for (int i = 0; i < numberCells; i++)
+            {
+                var randomX = random.Next(centerX  - radius, centerX + radius);
+                var randomY = random.Next(centerY -radius, centerY + radius);
+
+                if (0 <= randomX && randomX < width && 0 <= randomY && randomY < height)
+                {
+                    var otherCell = GetCell(randomX, randomY);
+                    cellsToBeAlive.Add(otherCell);
+
+                    if (numberCells % 5 == 0)
+                    {
+                        radius++;
+                    }
+                }
+            }
+
+            cellsToBeAlive.ForEach(cell => cell.IsAlive = true);
         }
     }
 }

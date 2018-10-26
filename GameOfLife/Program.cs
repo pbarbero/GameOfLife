@@ -6,10 +6,13 @@ namespace GameOfLife
     {
         static void Main(string[] args)
         {
-            var grid = new Grid(10, 20);
-            grid.SetSeed(30);
+            var height = 10;
+            var width = 20;
+            var grid = new Grid(height, width);
+            //grid.SetRandomSeed(height, width);
+            grid.SetCenterSeed(20, height, width);
 
-            int numberIterations = 200;
+            int numberIterations = 100;
 
             for (int i = 0; i < numberIterations; i++)
             {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GameOfLife.Library;
+using System;
 
 namespace GameOfLife
 {

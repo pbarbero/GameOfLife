@@ -6,9 +6,9 @@ namespace GameOfLife.UnitTests.Scenarios
 {
     internal static class CellScenario
     {
-        internal static void Build2AlivedNeighbors(Grid grid)
-        {
+        //internal static void Build2AlivedNeighbors(Grid grid)
+        //{
 
-        }
+        //}
     }
 }

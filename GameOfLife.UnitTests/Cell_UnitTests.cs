@@ -1,3 +1,4 @@
+using GameOfLife.Library;
 using Xunit;
 
 namespace GameOfLife.UnitTests

@@ -7,8 +7,7 @@ namespace GameOfLife
         static void Main(string[] args)
         {
             var grid = new Grid(10, 20);
-            grid.Create();
-            grid.SetSeed();
+            grid.SetSeed(30);
 
             int numberIterations = 200;
 

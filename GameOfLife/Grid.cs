@@ -15,10 +15,7 @@ namespace GameOfLife
         {
             Height = height;
             Width = width;
-        }
 
-        public void Create()
-        {
             Cells = new List<Cell>();
 
             for (int i = 0; i < Height; i++)
@@ -50,11 +47,11 @@ namespace GameOfLife
             Task.WaitAll(tasks);
         }
 
-        public void SetSeed()
+        public void SetSeed(int numberAlivedCells)
         {
             var random = new Random();
 
-            for (int i = 0; i < Height*Width/3; i++)
+            for (int i = 0; i < numberAlivedCells; i++)
             {
                 var randomHeight = random.Next(0, Height);
                 var randomWidth = random.Next(0, Width);

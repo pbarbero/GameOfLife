@@ -42,10 +42,11 @@ namespace GameOfLife
         public List<Cell> GetNeighbors()
         {
             return Grid.Cells.Where(cell => !(cell.X == X && cell.Y == Y)
-                                  && (X-1 <= cell.X 
+                                   && (X-1 <= cell.X 
                                    && cell.X <= X+1
                                    && Y-1 <= cell.Y
-                                   && cell.Y <= Y+1)).ToList();
+                                   && cell.Y <= Y+1)
+                                   ).ToList();
         }
     }
 }

@@ -54,7 +54,7 @@ namespace GameOfLife
         {
             var random = new Random();
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < Height*Width/3; i++)
             {
                 var randomHeight = random.Next(0, Height);
                 var randomWidth = random.Next(0, Width);

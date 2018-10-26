@@ -7,6 +7,7 @@ namespace GameOfLife.UnitTests
     public class When_CheckCell
     {
         private Grid Grid { get; set; }
+
         public When_CheckCell()
         {
             Grid = new Grid(2,2);

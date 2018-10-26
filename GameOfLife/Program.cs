@@ -8,15 +8,19 @@ namespace GameOfLife
         {
             var grid = new Grid(10, 20);
             grid.Create();
+            grid.SetSeed();
 
-            int numberIterations = 10;
+            int numberIterations = 200;
 
             for (int i = 0; i < numberIterations; i++)
             {
                 PrintIteration(grid);
-                Console.WriteLine("----------------------------------------");
+                Console.WriteLine("----------------------------");
                 grid.NextIteration();
             }
+
+            Console.WriteLine("Press any key to stop...");
+            Console.ReadKey();
         }
 
         private static void PrintIteration(Grid grid)
